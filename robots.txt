@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://us-rent-increase-cap-calc.enjoy-onepage.com/sitemap.xml
