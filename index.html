@@ -611,12 +611,12 @@
   });
 
   function calculate() {
-    const current = Math.max(10, parseFloat(currentRentEl.value) || 0);
-    const proposed = Math.max(10, parseFloat(proposedRentEl.value) || 0);
-    const cpi = Math.max(0, parseFloat(cpiRateEl.value) || 0);
-    const base = Math.max(0, parseFloat(statutoryBaseEl.value) || 0);
+    const current = Math.max(10, Math.max(0, parseFloat(currentRentEl.value) || 0));
+    const proposed = Math.max(10, Math.max(0, parseFloat(proposedRentEl.value) || 0));
+    const cpi = Math.max(0, Math.max(0, parseFloat(cpiRateEl.value) || 0));
+    const base = Math.max(0, Math.max(0, parseFloat(statutoryBaseEl.value) || 0));
     const ceiling = Math.max(0.1, parseFloat(statutoryCeilingEl.value) || 10);
-    const noticeDays = parseInt(noticeDaysEl.value, 10) || 0;
+    const noticeDays = Math.max(0, parseInt(noticeDaysEl.value, 10) || 0);
 
     let computedCapPct = base + cpi;
     if (computedCapPct > ceiling) {
